@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import Toaster from "react-hot-toast";
 import GlobalStyles from "./styles/GlobalStyle";
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
@@ -15,6 +14,8 @@ import Account from "./pages/Account";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,7 +48,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <Toaster
+      <ToastContainer
         position="top-center"
         gutter={12}
         containerStyle={{ margin: "8px" }}

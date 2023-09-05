@@ -1,7 +1,8 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import styled from "styled-components";
 import { deleteCabin } from "../../services/apiCabins";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
+
 // import formatCurrenct from "../../utils/helpers";
 /* eslint react/prop-types: 0 */
 const TableRow = styled.div`
