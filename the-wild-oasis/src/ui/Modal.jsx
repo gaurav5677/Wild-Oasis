@@ -1,12 +1,5 @@
 import { HiXMark } from "react-icons/hi2";
-import {
-  cloneElement,
-  createContext,
-  useContext,
-  // useEffect,
-  useState,
-  // useRef,
-} from "react";
+import { cloneElement, createContext, useContext, useState } from "react";
 import styled from "styled-components";
 import { createPortal } from "react-dom";
 import { useOutSideClick } from "../hooks/useOutSideClick";
@@ -93,7 +86,7 @@ function Window({ children, name }) {
         <Button onClick={close}>
           <HiXMark />
         </Button>
-        <div>{cloneElement(children, { oncCloseModal: close })}</div>
+        <div>{cloneElement(children, { onCloseModal: close })}</div>
       </StyledModal>
     </Overlay>,
     document.body
