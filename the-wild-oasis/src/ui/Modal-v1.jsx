@@ -1,10 +1,6 @@
-import { cloneElement, createContext, useContext, useState } from "react";
-
-import { HiXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
-
+import { HiXMark } from "react-icons/hi2";
 import styled from "styled-components";
-/* eslint react/prop-types: 0 */
 
 const StyledModal = styled.div`
   position: fixed;
@@ -55,18 +51,17 @@ const Button = styled.button`
   }
 `;
 
-const ModalContext = createContext();
-
-function Window({ children, onClose }) {
+function Modal({ children, onClose }) {
   return createPortal(
     <Overlay>
       <StyledModal>
         <Button onClick={onClose}>
           <HiXMark />
         </Button>
+
         <div>{children}</div>
       </StyledModal>
-    </Overlay>
+    </Overlay>,
     document.body
   );
 }

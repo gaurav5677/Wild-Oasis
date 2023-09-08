@@ -1,21 +1,18 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import GlobalStyles from "./styles/GlobalStyle";
+import GlobalStyles from "./styles/GlobalStyles";
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
 import Cabins from "./pages/Cabins";
-import User from "./pages/Users";
+import Users from "./pages/Users";
 import Settings from "./pages/Settings";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import AppLayout from "./ui/AppLayout";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +27,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
+
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -38,7 +36,7 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="bookings" element={<Bookings />} />
             <Route path="cabins" element={<Cabins />} />
-            <Route path="user" element={<User />} />
+            <Route path="users" element={<Users />} />
             <Route path="settings" element={<Settings />} />
             <Route path="account" element={<Account />} />
           </Route>
@@ -48,7 +46,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <ToastContainer
+      <Toaster
         position="top-center"
         gutter={12}
         containerStyle={{ margin: "8px" }}
