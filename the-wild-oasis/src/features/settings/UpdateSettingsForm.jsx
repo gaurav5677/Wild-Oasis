@@ -9,8 +9,8 @@ function UpdateSettingsForm() {
   const {
     isLoading,
     settings: {
-      minBookingLength,
-      maxBookingLength,
+      miniBookingLength,
+      maxBokkingLength,
       maxGuestsPerBooking,
       breakfastPrice,
     } = {},
@@ -32,9 +32,9 @@ function UpdateSettingsForm() {
         <Input
           type="number"
           id="min-nights"
-          defaultValue={minBookingLength}
+          defaultValue={miniBookingLength}
           disabled={isUpdating}
-          onBlur={(e) => handleUpdate(e, "minBookingLength")}
+          onBlur={(e) => handleUpdate(e, "miniBookingLength")}
         />
       </FormRow>
 
@@ -42,9 +42,9 @@ function UpdateSettingsForm() {
         <Input
           type="number"
           id="max-nights"
-          defaultValue={maxBookingLength}
+          defaultValue={maxBokkingLength}
           disabled={isUpdating}
-          onBlur={(e) => handleUpdate(e, "maxBookingLength")}
+          onBlur={(e) => handleUpdate(e, "maxBokkingLength")}
         />
       </FormRow>
 
