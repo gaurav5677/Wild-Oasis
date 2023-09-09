@@ -8,16 +8,16 @@ import {
   HiArrowDownOnSquare,
 } from "react-icons/hi2";
 
-import Tag from "ui/Tag";
-import Menus from "ui/Menus";
-import Modal from "ui/Modal";
-import ConfirmDelete from "ui/ConfirmDelete";
-import Table from "ui/Table";
+import Tag from "../../ui/Tag";
+import Menus from "../../ui/Menus";
+import Modal from "../../ui/Modal";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import Table from "../../ui/Table";
 
-import { useDeleteBooking } from "features/bookings/useDeleteBooking";
-import { formatCurrency } from "utils/helpers";
-import { formatDistanceFromNow } from "utils/helpers";
-import { useCheckout } from "features/check-in-out/useCheckout";
+// import { useDeleteBooking } from "features/bookings/useDeleteBooking";
+import { formatCurrency } from "../../utils/helpers";
+import { formatDistanceFromNow } from "../../utils/helpers";
+// import { useCheckout } from "features/check-in-out/useCheckout";
 import { format, isToday } from "date-fns";
 /* eslint react/prop-types: 0 */
 
@@ -64,19 +64,19 @@ const Amount = styled.div`
 function BookingRow({
   booking: {
     id: bookingId,
-    created_at,
+    // created_at,
     startDate,
     endDate,
     numNights,
-    numGuests,
+    // numGuests,
     totalPrice,
     status,
     guests: { fullName: guestName, email },
     cabins: { name: cabinName },
   },
 }) {
-  const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
-  const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
+  // const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
+  // const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
 
   const navigate = useNavigate();
 
@@ -137,8 +137,8 @@ function BookingRow({
 
             {status === "checked-in" && (
               <Menus.Button
-                onClick={() => checkout(bookingId)}
-                disabled={isCheckingOut}
+                // onClick={() => checkout(bookingId)}
+                // disabled={isCheckingOut}
                 icon={<HiArrowUpOnSquare />}
               >
                 Check out
@@ -160,8 +160,8 @@ function BookingRow({
           <ConfirmDelete
             resource="booking"
             // These options will be passed wherever the function gets called, and they determine what happens next
-            onConfirm={(options) => deleteBooking(bookingId, options)}
-            disabled={isDeleting}
+            // onConfirm={(options) => deleteBooking(bookingId, options)}
+            // disabled={isDeleting}
           />
         </Modal.Window>
       </Modal>
