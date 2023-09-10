@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+/* eslint react/prop-types: 0 */
+
 const StyledDataItem = styled.div`
   display: flex;
   align-items: center;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+/* eslint react/prop-types: 0 */
 const StyledCheckbox = styled.div`
   display: flex;
   gap: 1.6rem;
