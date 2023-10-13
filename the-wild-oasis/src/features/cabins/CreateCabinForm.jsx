@@ -104,7 +104,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           {...register("discount", {
             required: "This field is required",
             validate: (value) =>
-              value <= getValues().regularPrice ||
+              Number(value) <= Number(getValues().regularPrice) ||     // Abhi got a bug here and solved successfully,😊  error = as default strings were compared , not suitable for our feature,  Converting into Number solved the issues 
               "Discount should be less than regular price",
           })}
         />
